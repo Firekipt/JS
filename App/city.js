@@ -97,9 +97,9 @@ class City {
   }
 
   async offeringCorn (offer) {
-    if (typeof offer === 'number') {
-      this.corn_ = (offer >= 0) ? this.corn - offer : this.corn;
-      await this.divinity.offeringCorn(offer);
+    if (typeof Number(offer) === 'number') {
+      this.corn_ = (Number(offer) >= 0) ? this.corn - Number(offer) : this.corn;
+      await this.divinity.offeringCorn(Number(offer));
     } else {
       console.log("Invalid Input");
     }
