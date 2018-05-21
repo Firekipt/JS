@@ -52,7 +52,7 @@ describe('world-worldEvents_.js', () => {
       g.gold.should.be.equal(1000);
       h.gold.should.be.equal(1000);
 
-      await g.buyCorn(h, 100, 2);
+      await g.buyCorn(h, 100);
       g.corn.should.be.equal(1100);
       h.corn.should.be.equal(900);
       g.gold.should.be.equal(800);
@@ -62,7 +62,7 @@ describe('world-worldEvents_.js', () => {
         /You didn't gave a number of corn/);
 
       await (g.buyCorn(h, -4)).should.be.rejectedWith(Error,
-        /You can't rip off/);
+        /You are a thief !/);
     });
   });
 

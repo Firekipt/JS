@@ -39,7 +39,8 @@ class City {
   buyCorn(city, numberOfCorn) {
     return new Promise((resolve, reject) => {
       if (typeof numberOfCorn === 'number') {
-        if (numberOfCorn > 0 && (city.corn - numberOfCorn) >= 0) {
+        if (numberOfCorn > 0 && numberOfCorn <= city.corn &&
+          numberOfCorn * 2 <= this.gold) {
           setTimeout(() => {
             if (Math.random() > 0.80) { /* 20% to loose trading */
               this.gold_ = (this.gold - (numberOfCorn * 2));
@@ -56,7 +57,7 @@ class City {
           }, 4 * this.timeFactor * Math.random());
         } else {
           reject(new Error(
-            `You can't rip off`
+            `You are a thief !`
           ));
         }
       } else {
@@ -71,7 +72,8 @@ class City {
   async sellCorn(city, numberOfCorn) {
     return new Promise((resolve, reject) => {
       if (typeof numberOfCorn === 'number') {
-        if (numberOfCorn > 0) {
+        if (numberOfCorn > 0 && numberOfCorn <= this.corn &&
+          numberOfCorn <= city.gold) {
           setTimeout(() => {
             if (Math.random() > 0.80) { /* 20% to loose trading */
               this.corn_ = (this.corn - numberOfCorn);
@@ -88,7 +90,7 @@ class City {
           }, 4 * this.timeFactor * Math.random());
         } else {
           reject(new Error(
-            `You can't rip off`
+            `You are a thief !`
           ));
         }
       } else {
@@ -101,12 +103,16 @@ class City {
 
   async offeringCorn(offer) {
     if (typeof offer === 'number') {
-      if (offer === 0) {
-        console.log('Poor Divinity');
+      if (this.corn - offer > 0) {
+        if (offer === 0) {
+          console.log('Poor Divinity');
+        } else {
+          await this.divinity.offeringCorn(offer);
+          this.corn_ = (offer > 0) ? this.corn - offer : this.corn;
+          console.log('................Your offering is done...............');
+        }
       } else {
-        await this.divinity.offeringCorn(offer);
-        this.corn_ = (offer > 0) ? this.corn - offer : this.corn;
-        console.log('................Your offering is done...............');
+        console.log('Not enough corn');
       }
     } else {
       console.log('Invalid Input');
@@ -115,12 +121,16 @@ class City {
 
   async offeringGold(offer) {
     if (typeof offer === 'number') {
-      if (offer === 0) {
-        console.log('Poor Divinity');
+      if (this.corn - offer > 0) {
+        if (offer === 0) {
+          console.log('Poor Divinity');
+        } else {
+          await this.divinity.offeringGold(offer);
+          this.gold_ = (offer > 0) ? this.gold - offer : this.gold;
+          console.log('................Your offering is done...............');
+        }
       } else {
-        await this.divinity.offeringGold(offer);
-        this.gold_ = (offer > 0) ? this.gold - offer : this.gold;
-        console.log('................Your offering is done...............');
+        console.log('Not enough gold');
       }
     } else {
       console.log('Invalid Input');
