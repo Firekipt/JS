@@ -11,28 +11,12 @@ class Troop {
 
   }
 
-  fight(city) {
-    this.worldEvents.emit('fight', {
-      troop: this,
-      city: city
-    });
+  fight() {
+
   }
 
-  defend(troop) {
-    return new Promise(resolve => {
-      setTimeout(() => {
-        if(this.nbr > troop.nbr) {
-          /* La troupe attaquante meure */
-          resolve();
-        } else if (this.nbr === troop.nbr) {
-          /* Rien */
-          resolve();
-        } else {
-          /* La troupe qui défend est blessée */
-          resolve();
-        }
-      }, 5 * this.timeFactor * Math.random());
-    });
+  defend() {
+
   }
 
   get nbr() {

@@ -9,9 +9,7 @@ chai.should();
 
 describe('world-worldEvents_.js', () => {
   describe('City', () => {
-    let g;
-
-    g = new City('Fort-Joie', 'Zeus', 1);
+    const g = new City('Fort-Joie', 'Zeus', 1);
 
     it('should update divinity\'s corn', async () => {
       g.divinity.corn.should.be.equal(0);
@@ -45,11 +43,8 @@ describe('world-worldEvents_.js', () => {
   });
 
   describe('Updated values on Trade', () => {
-    let g;
-    let h;
-
-    g = new City('Fort-Joie', 'Zeus', 1);
-    h = new City('Néant', 'Gara', 1);
+    const g = new City('Fort-Joie', 'Zeus', 1);
+    const h = new City('Néant', 'Gara', 1);
 
     it('should update city\'s corn and gold on trade', async () => {
       g.corn.should.be.equal(1000);
