@@ -1,15 +1,13 @@
 # TP-2C-2018-RAFFATIN
 
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
-
-## Git :
+Git :
 ```
 git clone https://github.com/Firekipt/JS.git
 nmp install
 nmp start
 ```
 
-##Done :
+## Done :
 We have 3 classes :
   - divinity to create a divinity and then, offering corn or gold to this
   divinity. Once offering is done, this divinity can emit three events, favor (100%),
@@ -22,12 +20,12 @@ We have 3 classes :
 
   - troop to create troop. City can buy a number of troop for 3g/u.
 
-##ToDo :
+## ToDo :
   - a city can fight an other city with his troop chosen. Then, the city which is attacked,
   can defend itself if it has his own troop.
   - IA for other city with interval and action on probability.
 
-##Game :
+## Game :
   - We choose our name of city.
   - We choose our name of divinity.
   - Display each city with his number of corn and gold and his divinity associated.
