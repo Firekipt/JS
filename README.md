@@ -1,5 +1,7 @@
 # TP-2C-2018-RAFFATIN
 
+[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo)
+
 ## Git :
 ```
 git clone https://github.com/Firekipt/JS.git
