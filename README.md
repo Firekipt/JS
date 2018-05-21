@@ -30,6 +30,6 @@ We have 3 classes :
   - We choose our name of divinity.
   - Display each city with his number of corn and gold and his divinity associated.
   (Only two cities for now, own and a test city)
-  - We choose a action
+  - We choose an action
   - Between each action, we have the updating of corn and gold of our city.
   (Cause readline blocks the code, it means that when we respond for a question, the time is stopped)
